@@ -25,7 +25,7 @@ describe('Task2 - Zechendorf’s Theorem', () => {
         expect(expected).toBe(result);
     });
 
-    test('should return the sentence with the words of length greater than 5 reversed', () => {
+    test('should return a list with the representation of Zeckendorf', () => {
         casesTask2.forEach(c => {
             const expected = c.expected;
             const result = tasks.zechendorf(c.num)
