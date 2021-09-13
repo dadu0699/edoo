@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .grid-container {
+            border: 5px solid #FFFF00;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            height: 150px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .grid-item {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            font-size: 30px;
+            height: 50px;
+            text-align: center;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tic Tac Toe</h1>
+    <h3>It is the turn of <span id="turn"></span></h3>
+
+    <div class="grid-container">
+        <div class="grid-item" id="box1"></div>
+        <div class="grid-item" id="box2"></div>
+        <div class="grid-item" id="box3"></div>
+        <div class="grid-item" id="box4"></div>
+        <div class="grid-item" id="box5"></div>
+        <div class="grid-item" id="box6"></div>
+        <div class="grid-item" id="box7"></div>
+        <div class="grid-item" id="box8"></div>
+        <div class="grid-item" id="box9"></div>
+    </div>
+
+    <script>
+        let turn = true;
+        document.getElementById("turn").innerHTML = "X";
+
+        const elements = document.getElementsByClassName("grid-item");
+        for (let i = 0, len = elements.length; i < len; i++) {
+            elements[i].addEventListener("click", function (e) {
+                document.getElementById("turn").innerHTML = !turn ? "X" : "O";
+
+                elements[i].innerHTML = turn ? "X" : "O";
+                turn = !turn;
+            });
+        }
+    </script>
+</body>
+
+</html>
